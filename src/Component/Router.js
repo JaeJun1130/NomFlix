@@ -9,9 +9,11 @@ import {
 import Home from "../Routes/Home";
 import TV from "../Routes/TV";
 import Serach from "../Routes/Serach";
+import Header from "../Component/Header";
 
 export default () => (
   <Router>
+    <Header />
     <Switch>
       <Route path="/" exact component={Home}></Route>
       <Route path="/tv" exact component={TV}></Route>
