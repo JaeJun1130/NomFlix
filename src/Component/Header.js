@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 const Header = styled.header`
   color: white;
@@ -29,27 +29,30 @@ const Item = styled.li`
 
   width: 50px;
   text-align: center;
+  background-color: ${(props) => (props.current ? "#535c68" : "transparent")};
+  transition: background-color 0.5s ease-in-out;
 `;
 
 const SLink = styled(Link)`
-  height: 50px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export default () => (
+export default withRouter(({ location: { pathname } }) => (
   <Header>
+    {console.log(pathname)}
     <List>
-      <Item>
+      <Item current={pathname === "/"}>
         <SLink to="/">Moives</SLink>
       </Item>
-      <Item>
+      <Item current={pathname === "/tv/"}>
         <SLink to="/tv/">TV</SLink>
       </Item>
-      <Item>
+      <Item current={pathname === "/serach/"}>
         <SLink to="/serach/">Serach</SLink>
       </Item>
     </List>
   </Header>
-);
+));
