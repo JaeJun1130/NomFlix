@@ -4,16 +4,7 @@ const api = axios.create({
   baseURL: "https://api.themoviedb.org/3/",
 });
 
-api.get("tv/popular", {
-  params: {
-    api_key: "aaf73d06a96c7cdafaa6aabd6660b488",
-    language: "en-US",
-  },
-});
-
-// api.get("tv/popular");
-
-export const movieApi = {
+export const moviesApi = {
   nowPlaying: () =>
     api.get("movie/now_playing", {
       params: {
