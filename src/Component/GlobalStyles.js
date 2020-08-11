@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import "../font.css";
 
 const globalStyle = createGlobalStyle`
 ${reset};
+
 
 a{
     text-decoration:none;
@@ -13,12 +15,12 @@ a{
     box-sizing: border-box;
 }
 body{
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 
-    Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:12px;
+
+    font-family: 'Chilanka', cursive;
+    font-size:14px;
     background-color:rgba(20,20,20,1);
     color:white;
-    padding-top:50px;
+    padding-top:60px;
 }`;
 
 export default globalStyle;

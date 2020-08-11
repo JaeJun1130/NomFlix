@@ -27,7 +27,7 @@ const Item = styled.li`
     margin-right: 10px;
   } */
 
-  width: 50px;
+  width: 70px;
   text-align: center;
   background-color: ${(props) => (props.current ? "#535c68" : "transparent")};
   transition: background-color 0.5s ease-in-out;
