@@ -39,8 +39,10 @@ export const moviesApi = {
     }),
 
   movieSearch: (term) =>
-    api.get("movie/serach", {
+    api.get("search/movie", {
       params: {
+        api_key: "aaf73d06a96c7cdafaa6aabd6660b488",
+        language: "en-US",
         query: encodeURIComponent(term),
       },
     }),
@@ -81,8 +83,10 @@ export const tvApi = {
     }),
 
   tvSearch: (term) =>
-    api.get("serach/tv", {
+    api.get("search/tv", {
       params: {
+        api_key: "aaf73d06a96c7cdafaa6aabd6660b488",
+        language: "en-US",
         query: encodeURIComponent(term),
       },
     }),
