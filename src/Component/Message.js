@@ -14,6 +14,7 @@ const Text = Styled.span`
 const Message = ({ text, color }) => (
   <Container>
     <Text color={color}>{text}</Text>
+    {console.log(text)}
   </Container>
 );
 

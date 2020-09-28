@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Section from "../../Component/Section";
 import Lodaer from "../../Component/Lodaer";
 import Message from "../../Component/Message";
+import Poster from "../../Component/Poster";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -18,7 +19,7 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, Loading }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster></Poster>
           ))}
         </Section>
       )}
@@ -38,7 +39,6 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, Loading }) =>
           ))}
         </Section>
       )}
-
       {error && <Message color="#e74c3c" text={error} />}
     </Container>
   );
