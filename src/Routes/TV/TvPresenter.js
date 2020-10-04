@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Section from "../../Component/Section";
 import Lodaer from "../../Component/Lodaer";
 import Message from "../../Component/Message";
+import Poster from "../../Component/Poster";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -18,7 +19,15 @@ const TvPresenter = ({ topRating, popular, airingToday, error, Loading }) =>
       {topRating && topRating.length > 0 && (
         <Section title="Top Rating">
           {topRating.map((show) => (
-            <span key={show.id}>{show.name}</span>
+            <Poster
+              key={show.id}
+              id={show.id}
+              imageUrl={show.poster_path}
+              title={show.original_name}
+              rating={show.vote_average}
+              year={show.first_air_date && show.first_air_date.substring(0, 4)}
+              isMoive={true}
+            />
           ))}
         </Section>
       )}
@@ -26,7 +35,15 @@ const TvPresenter = ({ topRating, popular, airingToday, error, Loading }) =>
       {popular && popular.length > 0 && (
         <Section title="Popular">
           {popular.map((show) => (
-            <span key={show.id}>{show.name}</span>
+            <Poster
+              key={show.id}
+              id={show.id}
+              imageUrl={show.poster_path}
+              title={show.original_name}
+              rating={show.vote_average}
+              year={show.first_air_date && show.first_air_date.substring(0, 4)}
+              isMoive={true}
+            />
           ))}
         </Section>
       )}
@@ -34,7 +51,15 @@ const TvPresenter = ({ topRating, popular, airingToday, error, Loading }) =>
       {airingToday && airingToday.length > 0 && (
         <Section title="Airing Today">
           {airingToday.map((show) => (
-            <span key={show.id}>{show.name}</span>
+            <Poster
+              key={show.id}
+              id={show.id}
+              imageUrl={show.poster_path}
+              title={show.original_name}
+              rating={show.vote_average}
+              year={show.first_air_date && show.first_air_date.substring(0, 4)}
+              isMoive={true}
+            />
           ))}
         </Section>
       )}

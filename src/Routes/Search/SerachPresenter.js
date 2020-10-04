@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Section from "../../Component/Section";
 import Lodaer from "../../Component/Lodaer";
 import Message from "../../Component/Message";
+import Poster from "../../Component/Poster";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -45,7 +46,15 @@ const SearchPresenter = ({
         {movieResults && movieResults.length > 0 && (
           <Section title="Movie Result">
             {movieResults.map((movie) => (
-              <span key={movie.id}>{movie.title}</span>
+              <Poster
+                key={movie.id}
+                id={movie.id}
+                imageUrl={movie.poster_path}
+                title={movie.original_title}
+                rating={movie.vote_average}
+                year={movie.release_date && movie.release_date.substring(0, 4)}
+                isMoive={true}
+              />
             ))}
             {error}
           </Section>
@@ -54,7 +63,17 @@ const SearchPresenter = ({
         {tvResults && tvResults.length > 0 && (
           <Section title="TV Result">
             {tvResults.map((show) => (
-              <span key={show.id}>{show.name}</span>
+              <Poster
+                key={show.id}
+                id={show.id}
+                imageUrl={show.poster_path}
+                title={show.original_name}
+                rating={show.vote_average}
+                year={
+                  show.first_air_date && show.first_air_date.substring(0, 4)
+                }
+                isMoive={true}
+              />
             ))}
           </Section>
         )}

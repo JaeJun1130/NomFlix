@@ -19,7 +19,15 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, Loading }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Now Playing">
           {nowPlaying.map((movie) => (
-            <Poster></Poster>
+            <Poster
+              key={movie.id}
+              id={movie.id}
+              imageUrl={movie.poster_path}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+              isMoive={true}
+            />
           ))}
         </Section>
       )}
@@ -27,7 +35,15 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, Loading }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Up Coming">
           {upComing.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster
+              key={movie.id}
+              id={movie.id}
+              imageUrl={movie.poster_path}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+              isMoive={true}
+            />
           ))}
         </Section>
       )}
@@ -35,7 +51,15 @@ const HomePresenter = ({ nowPlaying, upComing, popular, error, Loading }) =>
       {nowPlaying && nowPlaying.length > 0 && (
         <Section title="Popular">
           {popular.map((movie) => (
-            <span key={movie.id}>{movie.title}</span>
+            <Poster
+              key={movie.id}
+              id={movie.id}
+              imageUrl={movie.poster_path}
+              title={movie.original_title}
+              rating={movie.vote_average}
+              year={movie.release_date && movie.release_date.substring(0, 4)}
+              isMoive={true}
+            />
           ))}
         </Section>
       )}
