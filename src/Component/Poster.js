@@ -12,7 +12,7 @@ background-Image:url(${(props) => props.bgUrl});
   height:180px;
   margin-bottom:5px;
   background-size:cover;
-  background-position:center;
+  background-position:center center;
   border-radius:10px;
   transition:opacity 0.2s linear;
   `;
@@ -21,7 +21,8 @@ const Rating = Styled.span`
 bottom:5px;
 right:5px; 
 position:absolute;
-opacity:0;`;
+opacity:0;
+transition:opacity 0.2s linear;`;
 
 const ImageContainer = Styled.div`
 margin-bottom:5px;
@@ -34,7 +35,7 @@ position:relative;
     opacity:1;
     transition:opacity 0.2s linear;
   }
-  
+           
 }
 `;
 

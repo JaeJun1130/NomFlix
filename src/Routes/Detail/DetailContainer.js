@@ -34,21 +34,22 @@ export default class extends React.Component {
     let result = null;
     try {
       if (isMovie) {
-        ({ data: result } = await moviesApi.movieDetail(parseId));
+        const request = await moviesApi.movieDetail(parseId);
+        result = request.data;
       } else {
-        ({ data: result } = await tvApi.showDetail(parseId));
+        const request = await tvApi.showDetail(parseId);
+        result = request.data;
       }
-      console.log(result);
     } catch {
       this.setState({ error: "Can't Find Result" });
     } finally {
-      this.setState({ loading: false, result: null });
+      this.setState({ Loading: false, result });
+      console.log(result);
     }
   }
 
   render() {
     const { result, error, Loading } = this.state;
-    console.log(this.state);
     return <DetailPresenter result={result} error={error} Loading={Loading} />;
   }
 }

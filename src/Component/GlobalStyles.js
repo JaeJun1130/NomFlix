@@ -15,7 +15,6 @@ a{
     box-sizing: border-box;
 }
 body{
-
     font-family: 'Chilanka', cursive;
     font-size:14px;
     background-color:rgba(20,20,20,1);
