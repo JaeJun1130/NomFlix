@@ -4,15 +4,22 @@
 
 ## Screens
 
-- [ ] Home
-- [ ] TV Show
-- [ ] Serach
-- [ ] Detail
+-   [x] Home
+-   [x] TV Show
+-   [x] Serach
+-   [x] Detail
 
 ## API GET
 
-- [ ] Now Playing
-- [ ] Top Rated
-- [ ] Popular
-- [ ] Upcoming
-- [ ] Airing Today
+-   [x] Now Playing
+-   [x] Upcoming
+-   [x] Top Rated
+-   [x] Popular
+-   [x] Airing Today
+-   [x] TV Show Detail
+-   [x] Movie Detail
+-   [x] Search (Movie,TV)
+
+## Deatil add
+
+-   [x] HomePage Link
